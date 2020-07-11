@@ -1,8 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { NGXLogger } from 'ngx-logger';
 import { Title } from '@angular/platform-browser';
+import { NGXLogger } from 'ngx-logger';
 
 import { NotificationService } from '../../core/services/notification.service';
 
@@ -29,7 +29,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
 @Component({
   selector: 'app-customer-list',
   templateUrl: './customer-list.component.html',
-  styleUrls: ['./customer-list.component.css']
+  styleUrls: ['./customer-list.component.scss'],
 })
 export class CustomerListComponent implements OnInit {
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
@@ -41,12 +41,11 @@ export class CustomerListComponent implements OnInit {
     private logger: NGXLogger,
     private notificationService: NotificationService,
     private titleService: Title
-  ) { }
+  ) {}
 
   ngOnInit() {
     this.titleService.setTitle('angular-material-template - Customers');
     this.logger.log('Customers loaded');
     this.dataSource.sort = this.sort;
-
   }
 }

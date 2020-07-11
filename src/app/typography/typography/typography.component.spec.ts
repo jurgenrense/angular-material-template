@@ -7,10 +7,7 @@ describe('TypographyComponent', () => {
   let fixture: ComponentFixture<TypographyComponent>;
 
   beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ TypographyComponent ]
-    })
-    .compileComponents();
+    TestBed.configureTestingModule({ declarations: [TypographyComponent] }).compileComponents();
   }));
 
   beforeEach(() => {

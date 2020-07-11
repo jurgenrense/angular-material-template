@@ -1,20 +1,18 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { LayoutComponent } from '../shared/layout/layout.component';
-import { IconsComponent } from './icons/icons.component';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
 
-const routes: Routes = [
-  {
-    path: '',
-    component: LayoutComponent,
-    children: [
-      { path: '', component: IconsComponent },
-    ]
-  }
-];
+import {LayoutComponent} from '../shared/layout/layout.component';
 
-@NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
-})
-export class IconsRoutingModule { }
+import {IconsComponent} from './icons/icons.component';
+
+const routes: Routes = [{
+  path: '',
+  component: LayoutComponent,
+  children: [
+    {path: '', component: IconsComponent},
+  ]
+}];
+
+@NgModule({imports: [RouterModule.forChild(routes)], exports: [RouterModule]})
+export class IconsRoutingModule {
+}

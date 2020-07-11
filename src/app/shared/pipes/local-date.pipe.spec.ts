@@ -29,5 +29,4 @@ describe('LocalDatePipe', () => {
     const result = pipe.transform(date, null);
     expect(result).toBe('');
   });
-
 });

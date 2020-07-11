@@ -1,17 +1,15 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {CommonModule} from '@angular/common';
+import {NgModule} from '@angular/core';
 
-import { IconsRoutingModule } from './icons-routing.module';
-import { IconsComponent } from './icons/icons.component';
-import { SharedModule } from '../shared/shared.module';
+import {SharedModule} from '../shared/shared.module';
+
+import {IconsRoutingModule} from './icons-routing.module';
+import {IconsComponent} from './icons/icons.component';
 
 
 @NgModule({
   declarations: [IconsComponent],
-  imports: [
-    CommonModule,
-    SharedModule,
-    IconsRoutingModule
-  ]
+  imports: [CommonModule, SharedModule, IconsRoutingModule]
 })
-export class IconsModule { }
+export class IconsModule {
+}

@@ -1,5 +1,6 @@
-import { NgModule, LOCALE_ID, ModuleWithProviders } from '@angular/core';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 import { CommonModule } from '@angular/common';
+import { LOCALE_ID, ModuleWithProviders, NgModule } from '@angular/core';
 import { MatMomentDateModule } from '@angular/material-moment-adapter';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatBadgeModule } from '@angular/material/badge';
@@ -28,8 +29,8 @@ import { MatTableModule } from '@angular/material/table';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
+
 import { SelectCheckAllComponent } from './select-check-all/select-check-all.component';
-import { DragDropModule } from '@angular/cdk/drag-drop';
 
 export const MY_FORMATS = {
   parse: {
