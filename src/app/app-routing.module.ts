@@ -5,6 +5,11 @@ import { AuthGuard } from './core/guards/auth.guard';
 
 const appRoutes: Routes = [
   {
+    path: 'calendar',
+    loadChildren: () => import('./calendar/calendar.module').then((m) => m.CalendarModule),
+    canActivate: [AuthGuard],
+  },
+  {
     path: 'auth',
     loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),
   },

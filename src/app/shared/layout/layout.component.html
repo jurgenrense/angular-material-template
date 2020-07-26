@@ -62,6 +62,13 @@
       <mat-nav-list>
         <h3 mat-subheader>Home</h3>
 
+        <a mat-list-item [routerLink]="['/calendar']" routerLinkActive="active">
+          <mat-icon mat-list-icon>
+            calendar_today
+          </mat-icon>
+          <p mat-line>Calendar</p>
+        </a>
+
         <a mat-list-item [routerLink]="['/dashboard']" routerLinkActive="active">
           <mat-icon mat-list-icon>
             dashboard

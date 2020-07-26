@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { NgModel } from '@angular/forms';
 import { MatCheckboxChange } from '@angular/material/checkbox';
 
 @Component({
@@ -9,7 +9,7 @@ import { MatCheckboxChange } from '@angular/material/checkbox';
   encapsulation: ViewEncapsulation.None,
 })
 export class SelectCheckAllComponent implements OnInit {
-  @Input() model: FormControl;
+  @Input() model: NgModel;
   @Input() values = [];
   @Input() text = 'Select All';
 
@@ -18,23 +18,20 @@ export class SelectCheckAllComponent implements OnInit {
   ngOnInit() {}
 
   isChecked(): boolean {
-    return this.model.value && this.values.length && this.model.value.length === this.values.length;
+    return this.model?.value?.length === this.values?.length;
   }
 
   isIndeterminate(): boolean {
-    return (
-      this.model.value &&
-      this.values.length &&
-      this.model.value.length &&
-      this.model.value.length < this.values.length
-    );
+    return this.model?.value?.length === 0
+      ? false
+      : this.model?.value?.length < this.values?.length;
   }
 
   toggleSelection(change: MatCheckboxChange): void {
     if (change.checked) {
-      this.model.setValue(this.values);
+      this.model.update.emit(this.values);
     } else {
-      this.model.setValue([]);
+      this.model.update.emit([]);
     }
   }
 }
