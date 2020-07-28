@@ -57,10 +57,16 @@ export class CalendarOverviewComponent implements OnInit {
       center: 'title',
       right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek',
     },
+    footerToolbar: {
+      left: 'prev,next today',
+      center: '',
+      right: '',
+    },
     initialView: 'timeGridWeek',
     //initialEvents: INITIAL_EVENTS, // alternatively, use the `events` setting
     // to fetch from a feed
-    height: 'auto',
+    height: 'calc(100vh - 320px)',
+    stickyHeaderDates: true,
     events: this.calendarEvents,
     firstDay: 1,
     weekends: true,
